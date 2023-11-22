@@ -1,3 +1,4 @@
+https://www.youtube.com/watch?v=C3dfjyft_m4
 <!DOCTYPE html>
 
 
@@ -10,7 +11,11 @@
         <div id ="debug"></div>
         <script>
             fetch("sample-file.json")
-            .then(response=> response.json())
-            .then(data=> {console.log(data)})
+             .then(response=> response.json())
+                .then(data=> {console.log(data.satz)
+                    document.querySelector("#debug").innerHTML =data.satz
+            })
+
+            
         </script>
     </body>

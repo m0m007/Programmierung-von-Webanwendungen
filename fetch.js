@@ -5,4 +5,8 @@ async function getJson (){
    
 }
 
-getJson().then(data=>console.log(data));
+function get2 (){
+    
+    return "2"
+   
+}
