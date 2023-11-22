@@ -10,5 +10,7 @@
         <div id ="debug"></div>
         <script>
             fetch("sample-file.json")
+            .then(response=> response.json())
+            .then(data=> {console.log(data)})
         </script>
     </body>
