@@ -8,14 +8,34 @@ https://www.youtube.com/watch?v=C3dfjyft_m4
     </head>
 
     <body>
-        <div id ="debug"></div>
-        <script>
-            fetch("sample-file.json")
-             .then(response=> response.json())
-                .then(data=> {console.log(data.satz)
-                    document.querySelector("#debug").innerHTML =data.satz
-            })
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    
+                </tr>
+            </thead>
 
-            
-        </script>
+            <tbody id="Tabelle">
+
+            </tbody>
+        </table>
     </body>
+<script>
+    fetch("test.json")
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(laender){
+        let tabelle = document.queryselector("#Tabelle");
+        let out ="";
+        for ( let element of array){
+            out += `<tr> <td> ${element.name} </td> </tr> `; 
+        }
+        tabelle.innerHTML = out;
+    })
+
+    </script>     
+ <script type ="text/javascript" src="tabelleerzeugen.js" ></script>
+
+</html>
