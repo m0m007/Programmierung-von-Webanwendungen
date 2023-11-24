@@ -1,4 +1,4 @@
-
+async function getFile(){
     let eintrag ="";
     let Header = document.getElementById("myTable")
     let response =  await fetch("test.json");
@@ -11,4 +11,4 @@
     Header.innerHTML = eintrag;
 
 
-
+}
