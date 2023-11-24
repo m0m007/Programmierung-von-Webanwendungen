@@ -1,5 +1,5 @@
  
-    fetch("test.json")
+    fetch("daten.json")
     .then(function(response){
         return response.json();
     })
@@ -8,6 +8,10 @@
         let out ="";
         for ( let element of array){
             out += `<tr> <td> ${element.name} </td> </tr> `; 
+            console.log(out); 
         }
-        tabelle.innerHTML = out;
+
+        
+       // tabelle.innerHTML = out;
+
     })

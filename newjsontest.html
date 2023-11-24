@@ -3,6 +3,8 @@ https://www.youtube.com/watch?v=C3dfjyft_m4
 
 
 <html lang="de">
+<script type ="text/javascript" src="tabelleerzeugen.js" ></script>
+
     <head>
         <titel> json example </titel>
     </head>
@@ -22,20 +24,8 @@ https://www.youtube.com/watch?v=C3dfjyft_m4
         </table>
     </body>
 <script>
-    fetch("test.json")
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(laender){
-        let tabelle = document.queryselector("#Tabelle");
-        let out ="";
-        for ( let element of array){
-            out += `<tr> <td> ${element.name} </td> </tr> `; 
-        }
-        tabelle.innerHTML = out;
-    })
 
     </script>     
- <script type ="text/javascript" src="tabelleerzeugen.js" ></script>
+ 
 
 </html>

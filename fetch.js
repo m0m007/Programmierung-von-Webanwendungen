@@ -1,5 +1,5 @@
 function createTable(){
-    fetch("test.json")
+    fetch("daten.json")
     .then(function(response){
         return response.json();
     })
@@ -14,7 +14,7 @@ function createTable(){
 
 
 function getJson2 (){
-    fetch("daten.json")
+    fetch("sample-file.json")
      .then(response=> response.json())
          .then(data=> { console.log(data)
 
