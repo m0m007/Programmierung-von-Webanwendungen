@@ -15,13 +15,13 @@
     <thead>
      <tr class="bg-info">
         
-         <th scope="col">Name</th>
+         <th scope="col" onclick="header()">Name</th>
          <th scope="col">Alter</th>
         
      </tr>
     </thead>
-    <tbody id="myTable">
-        <script> getFile();</script>
+    <tbody id="myTable" >
+        
     </tbody>
 </table>
 </div>
@@ -29,6 +29,18 @@
 <script>
 
  getHeader();
+ async function header(){
+    let eintrag ="";
+    let Tabelle = document.getElementById("myTable");
+    let response =  await fetch("test.json");
+    let json = await response.json();
+    let i =0;
+    for (let element of json){
+        eintrag +=` <tr> </th><td>${element.name} </td> <td> ${element.age} </td> </tr>`
+        i++;
+    }
+    Tabelle.innerHTML = eintrag;
+}
 </script>
 
 
