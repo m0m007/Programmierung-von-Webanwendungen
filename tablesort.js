@@ -149,13 +149,17 @@ function ZeilenAusblenden(modus){
     let eintrag = zeilen[i].getElementsByTagName("td")[0];
     
         if (eintrag){
-            if(eintrag.innerText === modus){
-                zeilen[i].style.display ="";
-            } else{
-                zeilen[i].style.display ="none"; 
-            }
+
+            if(checkSichtbarkeit(eintrag)){
+
+                if(eintrag.innerText === modus){
+                    zeilen[i].style.display ="";
+                } else{
+                    zeilen[i].style.display ="none"; 
+                }
             }
         }
+    }
 }
 
 function alleZeilenEinblenden(){
@@ -170,8 +174,7 @@ function alleZeilenEinblenden(){
             }
         }
 
-function checkSichtbarkeit(zeile){
-   return zeile.getAttribute("display");
-   
-    
-}
+
+function checkSichtbarkeit(element){
+    return element.style.display;
+ }

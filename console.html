@@ -24,6 +24,7 @@
     </ul>
   </div>
   
+<h1 onclick="test()" id="test2">hallo</h1>
 <h1 id="test">hi</h1>
 
 <div class=" table-responsive">
@@ -33,7 +34,7 @@
         
         <th onclick ="sortTableByAlphabet(0)">Art</th>
          <th onclick ="sortTableByAlphabet(1)">Name</th>
-         <th onclick ="sortTableByNumbers(2)">CO2-Emissionen</th>
+         <th onclick ="sortTableByNumbers(2)">CO2-Emissionen in Mt</th>
         
      </tr>
     </thead>
@@ -47,7 +48,21 @@
 getFile();
 
 
+function test(){
+  let header = document.getElementById("test");
+  let header2 = document.getElementById("test2");
+  header.style.display ="none";
+  if(CheckSichtbarkeit(header)){
+    header2.innerHTML = "true";
+  } else {
+    header2.innerHTML = "false";
+  }
 
+  
+}
+function CheckSichtbarkeit(element){
+    return element.style.display;
+ }
 
 
 </script>
