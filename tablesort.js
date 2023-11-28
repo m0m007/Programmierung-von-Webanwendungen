@@ -1,11 +1,11 @@
 async function getFile(){
     let eintrag ="";
-    let Tabelle = document.getElementById("myTable");
+    let Tabelle = document.getElementById("Eintraege");
     let response =  await fetch("daten.json");
     let json = await response.json();
 
     for (let element of json){
-        eintrag +=` <tr> </th><td>${element.Art} </td> <td>${element.Name} </td> <td> ${element.CO2} </td> </tr>`
+        eintrag +=` <tr> <td>${element.Art} </td> <td>${element.Name} </td> <td> ${element.CO2} </td> </tr>`
     }
     Tabelle.innerHTML = eintrag;
 }
@@ -24,7 +24,7 @@ function sortTableByAlphabet(spalte){
         sortieren =false;
         var rows = tabelle.rows;
 
-        for (let i=1; i < (rows.length-1); i++){
+        for (var i=1; i < (rows.length-1); i++){
             x =rows[i].getElementsByTagName("TD")[spalte];
             y =rows[i+1].getElementsByTagName("TD")[spalte];
 
@@ -68,20 +68,20 @@ function sortTableByNumbers(spalte){
         sortieren =false;
         let rows = tabelle.rows;
 
-        for (let i=1; i < (rows.length-1); i++){
+        for (var i=1; i < (rows.length-1); i++){
             x =rows[i].getElementsByTagName("TD")[spalte];
             y =rows[i+1].getElementsByTagName("TD")[spalte];
 
             if (richtung == "auf") {
 
-                if (parseFloat(x.innerHTML) > parseFloat(y.innerHTML)){
+                if (parseFloat(x.innerHTML) < parseFloat(y.innerHTML)){
                     aenderung = true;
                     break;
                 }
             }
         
             else if(richtung =="ab") {
-                if (parseFloat(x.innerHTML) < parseFloat(y.innerHTML)){
+                if (parseFloat(x.innerHTML) > parseFloat(y.innerHTML)){
                     aenderung = true;
                     break;
                 }
@@ -102,15 +102,16 @@ function sortTableByNumbers(spalte){
 
 
 
-function filtern() {
-    let input = document.getElementById("filter");
+function suchen() {
+    let input = document.getElementById("suche");
     let filter = input.value.toLowerCase();
     let tabelle = document.getElementById("tabelle");
     let zeilen = tabelle.getElementsByTagName("tr");
+
     for (let i = 0; i < zeilen.length; i++) {
-      var eintrag = zeilen[i].getElementsByTagName("td")[0];
+      let eintrag = zeilen[i].getElementsByTagName("td")[1];
       if (eintrag) {
-        var text = eintrag.textContent || eintrag.innerText;
+        let text = eintrag.textContent || eintrag.innerText;
         if (text.toLowerCase().indexOf(filter) > -1) {
           zeilen[i].style.display = "";
         } else {
@@ -119,5 +120,59 @@ function filtern() {
       }       
     }
   }
+  
 
+
+function filtern(n){
+    
+    let header =document.getElementById("test");
+    let modus ="";
+
+    switch (n) {
+        
+    case 0:
+        visibleRows();
+        break;
+
+    case 1:
+        visibleRows();
+        unvisibleRows("Land")
+        break;
+
+    case 2:
+        visibleRows();
+        unvisibleRows("Unternehmen");
+        break;
+    }
+}
+
+
+function unvisibleRows(modus){
+    
+   let tabelle = document.getElementById("tabelle");
+    let zeilen = tabelle.getElementsByTagName("tr");
+    for (let i = 0; i < zeilen.length; i++) {
+    let eintrag = zeilen[i].getElementsByTagName("td")[0];
+    
+        if (eintrag){
+            if(eintrag.innerText === modus){
+                zeilen[i].style.display ="";
+            } else{
+                zeilen[i].style.display ="none"; 
+            }
+            }
+        }
+}
+
+function visibleRows(){
+    let tabelle = document.getElementById("tabelle");
+    let zeilen = tabelle.getElementsByTagName("tr");
+    for (let i = 0; i < zeilen.length; i++) {
+    let eintrag = zeilen[i].getElementsByTagName("td")[0];
+
+        if (eintrag){
+                zeilen[i].style.display ="";
+            }
+            }
+        }
 

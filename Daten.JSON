@@ -11,6 +11,10 @@
     {"Art": "Land","Name": "Südkorea", "CO2": "352" },
     {"Art": "Land","Name": "Indonesien", "CO2": "626" },
     {"Art": "Land","Name": "Saudi-Arabien", "CO2": "615" },
+    {"Art": "Land","Name": "Kenia", "CO2": "22" },
+    {"Art": "Land","Name": "Irland", "CO2": "38" },
+    {"Art": "Land","Name": "Madagaskar", "CO2": "3" },
+    {"Art": "Land","Name": "Peru", "CO2": "62" },
        
     {"Art": "Unternehmen","Name": "RWE", "CO2" : "118"},
     {"Art": "Unternehmen","Name": "HeidelbergCement", "CO2" : "73"},
