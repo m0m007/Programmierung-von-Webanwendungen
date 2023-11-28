@@ -1,29 +1,27 @@
-{
+[
     
-    "laender": [
-        {"Land": "Volksrepublik China", "CO2": "11535" },
-        {"Land": "Vereinigte Staaten von Amerika", "CO2": "5107" },
-        {"Land": "Indien", "CO2": "2597" },
-        {"Land": "Russland", "CO2": "1792" },
-        {"Land": "Japan", "CO2": "1154" },
-        {"Land": "Deutschland", "CO2": "702" },
-        {"Land": "Iran", "CO2": "701" },
-        {"Land": "Südkorea", "CO2": "352" },
-        {"Land": "Indonesien", "CO2": "626" },
-        {"Land": "Saudi-Arabien", "CO2": "615" }
-        ],
+    
+    {"Art": "Land","Name": "Volksrepublik China", "CO2": "11535" },
+    {"Art": "Land","Name": "Vereinigte Staaten von Amerika", "CO2": "5107" },
+    {"Art": "Land","Name": "Indien", "CO2": "2597" },
+    {"Art": "Land","Name": "Russland", "CO2": "1792" },
+    {"Art": "Land","Name": "Japan", "CO2": "1154" },
+    {"Art": "Land","Name": "Deutschland", "CO2": "702" },
+    {"Art": "Land","Name": "Iran", "CO2": "701" },
+    {"Art": "Land","Name": "Südkorea", "CO2": "352" },
+    {"Art": "Land","Name": "Indonesien", "CO2": "626" },
+    {"Art": "Land","Name": "Saudi-Arabien", "CO2": "615" },
+       
+    {"Art": "Unternehmen","Name": "RWE", "CO2" : "118"},
+    {"Art": "Unternehmen","Name": "HeidelbergCement", "CO2" : "73"},
+    {"Art": "Unternehmen","Name": "E.ON", "CO2" : "69"},
+    {"Art": "Unternehmen","Name": "Lufthansa", "CO2" : "33"},
+    {"Art": "Unternehmen","Name": "Eskom", "CO2" : "216"},
+    {"Art": "Unternehmen","Name": "Gazprom", "CO2" : "111"},
+    {"Art": "Unternehmen","Name": "Enel", "CO2" : "107"},
+    {"Art": "Unternehmen","Name": "Tepco", "CO2" : "71"},
+    {"Art": "Unternehmen","Name": "Ameren", "CO2" : "60"},
+    {"Art": "Unternehmen","Name": "FirstEnergy", "CO2" : "63"}
 
-     "unternehmen": [
-        {"Unternehmen" : "RWE", "CO2" : "118"},
-        {"Unternehmen" : "HeidelbergCement", "CO2" : "73"},
-        {"Unternehmen" : "E.ON", "CO2" : "69"},
-        {"Unternehmen" : "Lufthansa", "CO2" : "33"},
-        {"Unternehmen" : "Eskom", "CO2" : "216"},
-        {"Unternehmen" : "Gazprom", "CO2" : "111"},
-        {"Unternehmen" : "Enel", "CO2" : "107"},
-        {"Unternehmen" : "Tepco", "CO2" : "71"},
-        {"Unternehmen" : "Ameren", "CO2" : "60"},
-        {"Unternehmen" : "FirstEnergy", "CO2" : "63"}
-
-        ]
-}
+       
+]

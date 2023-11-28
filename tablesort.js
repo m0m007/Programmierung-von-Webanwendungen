@@ -1,11 +1,11 @@
 async function getFile(){
     let eintrag ="";
     let Tabelle = document.getElementById("myTable");
-    let response =  await fetch("./test.json");
+    let response =  await fetch("daten.json");
     let json = await response.json();
 
     for (let element of json){
-        eintrag +=` <tr> </th><td>${element.name} </td> <td> ${element.age} </td> </tr>`
+        eintrag +=` <tr> </th><td>${element.Art} </td> <td>${element.Name} </td> <td> ${element.CO2} </td> </tr>`
     }
     Tabelle.innerHTML = eintrag;
 }
