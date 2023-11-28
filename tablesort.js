@@ -124,31 +124,25 @@ function suchen() {
 
 
 function filtern(n){
-    
-    let header =document.getElementById("test");
-    let modus ="";
-
     switch (n) {
-        
     case 0:
-        visibleRows();
+        alleZeilenEinblenden();
         break;
 
     case 1:
-        visibleRows();
-        unvisibleRows("Land")
+        alleZeilenEinblenden();
+        ZeilenAusblenden("Land")
         break;
 
     case 2:
-        visibleRows();
-        unvisibleRows("Unternehmen");
+        alleZeilenEinblenden();
+        ZeilenAusblenden("Unternehmen");
         break;
     }
 }
 
 
-function unvisibleRows(modus){
-    
+function ZeilenAusblenden(modus){
    let tabelle = document.getElementById("tabelle");
     let zeilen = tabelle.getElementsByTagName("tr");
     for (let i = 0; i < zeilen.length; i++) {
@@ -164,7 +158,7 @@ function unvisibleRows(modus){
         }
 }
 
-function visibleRows(){
+function alleZeilenEinblenden(){
     let tabelle = document.getElementById("tabelle");
     let zeilen = tabelle.getElementsByTagName("tr");
     for (let i = 0; i < zeilen.length; i++) {
@@ -176,3 +170,8 @@ function visibleRows(){
             }
         }
 
+function checkSichtbarkeit(zeile){
+   return zeile.getAttribute("display");
+   
+    
+}
