@@ -99,6 +99,9 @@ function sortTableByNumbers(spalte){
     }
 }
 
+function istUnsichtbar(element){
+    return (element.style.display === "none")
+}
 
 
 
@@ -109,58 +112,70 @@ function suchen() {
     let zeilen = tabelle.getElementsByTagName("tr");
 
     for (let i = 0; i < zeilen.length; i++) {
-      let eintrag = zeilen[i].getElementsByTagName("td")[1];
-      if (eintrag) {
-        let text = eintrag.textContent || eintrag.innerText;
-        if (text.toLowerCase().indexOf(filter) > -1) {
-          zeilen[i].style.display = "";
-        } else {
-          zeilen[i].style.display = "none";
+        let eintrag = zeilen[i].getElementsByTagName("td")[1];
+        if (eintrag) {
+            if (istUnsichtbar(eintrag)){
+            } else {
+                let text = eintrag.textContent || eintrag.innerText;
+                if (text.toLowerCase().indexOf(filter) > -1) {
+                }   else {
+                    zeilen[i].style.display = "none";
+                } 
+            }       
         }
-      }       
     }
-  }
+}
   
+function selectedRadio(){
+    let radios = document.getElementsByName("radio");
+     for (let i = 0; i < radios.length; i++){
+        if(radios[i].checked){
+            return parseInt(radios[i].value,10);
+        }
+    }
+}
 
 
-function filtern(n){
-    switch (n) {
+function ZeilenAusblenden(modus){
+    let tabelle = document.getElementById("tabelle");
+     let zeilen = tabelle.getElementsByTagName("tr");
+     for (let i = 0; i < zeilen.length; i++) {
+     let eintrag = zeilen[i].getElementsByTagName("td")[0];
+     
+         if (eintrag){
+ 
+             if(istUnsichtbar(eintrag)){
+             } else {
+                 if(eintrag.innerText === modus){
+                     zeilen[i].style.display ="";
+                } else{
+                     zeilen[i].style.display ="none"; 
+                }
+            }
+        }
+    }
+}
+
+
+function filtern(){
+
+
+    switch (selectedRadio()) {
     case 0:
-        alleZeilenEinblenden();
         break;
 
     case 1:
-        alleZeilenEinblenden();
         ZeilenAusblenden("Land")
         break;
 
     case 2:
-        alleZeilenEinblenden();
         ZeilenAusblenden("Unternehmen");
         break;
     }
 }
 
 
-function ZeilenAusblenden(modus){
-   let tabelle = document.getElementById("tabelle");
-    let zeilen = tabelle.getElementsByTagName("tr");
-    for (let i = 0; i < zeilen.length; i++) {
-    let eintrag = zeilen[i].getElementsByTagName("td")[0];
-    
-        if (eintrag){
 
-            if(checkSichtbarkeit(eintrag)){
-
-                if(eintrag.innerText === modus){
-                    zeilen[i].style.display ="";
-                } else{
-                    zeilen[i].style.display ="none"; 
-                }
-            }
-        }
-    }
-}
 
 function alleZeilenEinblenden(){
     let tabelle = document.getElementById("tabelle");
@@ -170,11 +185,17 @@ function alleZeilenEinblenden(){
 
         if (eintrag){
                 zeilen[i].style.display ="";
-            }
-            }
         }
+    }
+}
 
 
-function checkSichtbarkeit(element){
-    return element.style.display;
- }
+
+
+
+function updateTabelle(){
+    alleZeilenEinblenden();
+    filtern();
+    suchen();
+
+}

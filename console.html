@@ -10,61 +10,56 @@
 <body>
     
 
+<div class ="container">
+  <div class ="row align-items-center mt-3">
+    <div class="col-md-auto">
+      <input class="m-2" type ="text" id ="suche" onkeyup ="updateTabelle()" placeholder ="Suche nach Namen">
+    </div>
 
-<input type ="text" id ="suche" onkeyup ="suchen()" placeholder ="Suche nach Namen">
+      <div class ="col-md-auto">
+        <div class="form-check">
+          <input class="form-check-input" onclick ="updateTabelle()" type="radio" name="radio" id="alles" value="0" checked> <label class="form-check-label" for="radio1"></label>Alles</label>
+        </div>
 
-<div class="btn-group">
-    <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-      Filter
-    </button>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" onclick ="filtern(0)">Alles</a></li>
-      <li><a class="dropdown-item" onclick ="filtern(1)">Nur Länder</a></li>
-      <li><a class="dropdown-item" onclick ="filtern(2)">Nur Unternehmen</a></li>
-    </ul>
+        <div class="form-check ">
+          <input class="form-check-input" onclick ="updateTabelle()" type="radio" name="radio" id="land" value="1"><label class="form-check-label" for="radio2"> Nur Länder</label>
+        </div>
+
+          <div class="form-check ">
+          <input class="form-check-input" onclick ="updateTabelle()" type="radio" name="radio" id="unternehmen" value="2"><label class="form-check-label" for="radio3">Nur Unternehmen</label>
+        </div>
+
+      </div>
   </div>
-  
-<h1 onclick="test()" id="test2">hallo</h1>
-<h1 id="test">hi</h1>
 
-<div class=" table-responsive">
-<table id="tabelle" class ="table table-hover">
-    <thead>
-     <tr class="bg-info">
-        
-        <th onclick ="sortTableByAlphabet(0)">Art</th>
-         <th onclick ="sortTableByAlphabet(1)">Name</th>
-         <th onclick ="sortTableByNumbers(2)">CO2-Emissionen in Mt</th>
-        
-     </tr>
-    </thead>
-    <tbody id="Eintraege">
-        
-    </tbody>
-</table>
+
+      
+
+
+  
+  
+  <div class ="row">
+    <div class=" table-responsive mt-3">
+    <table id="tabelle" class ="table table-hover">
+        <thead>
+        <tr class="bg-info">
+            
+            <th onclick ="sortTableByAlphabet(0)">Art</th>
+            <th onclick ="sortTableByAlphabet(1)">Name</th>
+            <th onclick ="sortTableByNumbers(2)">CO2-Emissionen in Mt</th>
+            
+        </tr>
+        </thead>
+        <tbody id="Eintraege">
+            
+        </tbody>
+    </table>
+    </div>
+  </div>
 </div>
 
 <script>
 getFile();
-
-
-function test(){
-  let header = document.getElementById("test");
-  let header2 = document.getElementById("test2");
-  header.style.display ="none";
-  if(CheckSichtbarkeit(header)){
-    header2.innerHTML = "true";
-  } else {
-    header2.innerHTML = "false";
-  }
-
-  
-}
-function CheckSichtbarkeit(element){
-    return element.style.display;
- }
-
-
 </script>
 
 
