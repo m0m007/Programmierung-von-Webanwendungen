@@ -197,5 +197,4 @@ function updateTabelle(){
     alleZeilenEinblenden();
     filtern();
     suchen();
-
 }
