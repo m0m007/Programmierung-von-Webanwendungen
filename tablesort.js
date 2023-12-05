@@ -159,7 +159,6 @@ function ZeilenAusblenden(modus){
 
 function filtern(){
 
-
     switch (selectedRadio()) {
     case 0:
         break;
