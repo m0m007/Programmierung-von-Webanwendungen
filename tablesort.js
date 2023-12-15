@@ -212,13 +212,13 @@ function isrtl(){
 
 function changetortl(){
     let nav = document.getElementById("navspalte");
-    let tabelle = document.getElementById("tabellenspalte");
+    let inhalt = document.getElementById("inhaltsspalte");
     
     if (isrtl()){
         nav.classList.add("order-md-2", "order-lg-2" ,"order-xl-2");
-        tabelle.classList.add("order-md-1", "order-lg-1" ,"order-xl-1");
+        inhalt.classList.add("order-md-1", "order-lg-1" ,"order-xl-1");
     } else {
         nav.classList.add("order-md-1", "order-lg-1" ,"order-xl-1");
-        tabelle.classList.add("order-md-2", "order-lg-2" ,"order-xl-2");
+        inhalt.classList.add("order-md-2", "order-lg-2" ,"order-xl-2");
 }
 }
