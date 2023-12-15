@@ -36,20 +36,21 @@
 
   <div class ="container-fluid mb-5">
     <div class = "row">
-      <div class="col-md-auto justify-content-md-center">
+      <div id= "navspalte" class="col-md-auto justify-content-md-center order-xs-1 order-sm-1">
 
 
     
-        <nav class ="d-flex flex-shrink-3 p-1"  style ="width: 100px;">
+        <nav class ="d-flex flex-shrink-3 p-1"  style ="width: 120px;">
           <ul class="nav mb-auto">
             <li class="nav-item"> <a class="nav-link" href= "info.html" ><p class="text-success">Über uns</p></a></li>
             <li class="nav-item"> <a class="nav-link" href= "hintergrund.html" ><p class="text-success">Wissenschaftliche Hintergründe</p></a></li>
-            <li class="nav-item"> <a class="nav-link" href= "auftritte.html" ><p class="text-success">Öffentliche Auftritte</p></a></li>
+            <li class="nav-item"> <a class="nav-link" href= "auftritte.html" ><p id ="test" class="text-success">Öffentliche Auftritte</p></a></li>
           </ul>
         </nav>
       </div>
+      
 
-      <div class="col-md-8">
+      <div id="tabellenspalte" class="col-md-8 order-xs-2 order-sm-2">
         <div class ="container">
           <div class ="row align-items-center mt-3">
             <div class="col-md-auto">
@@ -109,6 +110,7 @@
   <script type ="text/javascript" src="tablesort.js" ></script>
   <script>
     getFile();
+    changetortl();
   </script>
 
 </body>

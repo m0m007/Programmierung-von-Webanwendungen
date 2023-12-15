@@ -197,3 +197,28 @@ function updateTabelle(){
     filtern();
     suchen();
 }
+
+function isrtl(){
+    let tags = ["ar", "he", "fa", "ur", "ks", "ps", "ug", "ku", "pa", "sd"];
+    let language = navigator.language;
+    let rtl = false;
+    for (let i = 0; i < tags.length; i++) {
+       if (language == tags[i]){
+        rtl = true;
+       }
+    }
+    return rtl;
+}
+
+function changetortl(){
+    let nav = document.getElementById("navspalte");
+    let tabelle = document.getElementById("tabellenspalte");
+    
+    if (isrtl()){
+        nav.classList.add("order-md-2", "order-lg-2" ,"order-xl-2");
+        tabelle.classList.add("order-md-1", "order-lg-1" ,"order-xl-1");
+    } else {
+        nav.classList.add("order-md-1", "order-lg-1" ,"order-xl-1");
+        tabelle.classList.add("order-md-2", "order-lg-2" ,"order-xl-2");
+}
+}
