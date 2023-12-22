@@ -210,7 +210,7 @@ function isrtl(){
     return rtl;
 }
 
-function changetortl(){
+function changeToRtl(){
     let nav = document.getElementById("navspalte");
     let inhalt = document.getElementById("inhaltsspalte");
     
