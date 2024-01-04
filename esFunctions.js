@@ -18,7 +18,7 @@ function sortTableByAlphabet(spalte){
     let x =0;
     let y =0;
     
-    let richtung ="auf"
+    let richtung ="ab"
 
     while (sortieren){
         sortieren =false;
@@ -28,14 +28,14 @@ function sortTableByAlphabet(spalte){
             x =rows[i].getElementsByTagName("TD")[spalte];
             y =rows[i+1].getElementsByTagName("TD")[spalte];
 
-            if (richtung == "auf") {
+            if (richtung == "ab") {
                 if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()){
                     aenderung = true;
                     break;
                 }
             }
         
-            else if(richtung =="ab") {
+            else if(richtung =="auf") {
                 if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()){
                     aenderung = true;
                     break;
@@ -47,8 +47,8 @@ function sortTableByAlphabet(spalte){
         sortieren = true;
         zaehler ++;
 
-    } else if (zaehler ==0 && richtung =="auf") {
-            richtung ="ab";
+    } else if (zaehler ==0 && richtung =="ab") {
+            richtung ="auf";
             sortieren = true;
         }
     }
@@ -62,7 +62,7 @@ function sortTableByNumbers(spalte){
     let zaehler =0;
     let x =0;
     let y =0;
-    let richtung ="auf"
+    let richtung ="ab"
 
     while (sortieren){
         sortieren =false;
@@ -72,7 +72,7 @@ function sortTableByNumbers(spalte){
             x =rows[i].getElementsByTagName("TD")[spalte];
             y =rows[i+1].getElementsByTagName("TD")[spalte];
 
-            if (richtung == "auf") {
+            if (richtung == "ab") {
 
                 if (parseFloat(x.innerHTML) < parseFloat(y.innerHTML)){
                     aenderung = true;
@@ -80,7 +80,7 @@ function sortTableByNumbers(spalte){
                 }
             }
         
-            else if(richtung =="ab") {
+            else if(richtung =="auf") {
                 if (parseFloat(x.innerHTML) > parseFloat(y.innerHTML)){
                     aenderung = true;
                     break;
@@ -92,8 +92,8 @@ function sortTableByNumbers(spalte){
         sortieren = true;
         zaehler ++;
 
-    } else if( zaehler ==0 && richtung =="auf") {
-            richtung ="ab";
+    } else if( zaehler ==0 && richtung =="ab") {
+            richtung ="auf";
             sortieren = true;
         }
     }
@@ -136,7 +136,7 @@ function selectedRadio(){
 }
 
 
-function ZeilenAusblenden(modus){
+function zeilenAusblenden(modus){
     let tabelle = document.getElementById("tabelle");
      let zeilen = tabelle.getElementsByTagName("tr");
      for (let i = 0; i < zeilen.length; i++) {
@@ -164,11 +164,11 @@ function filtern(){
         break;
 
     case 1:
-        ZeilenAusblenden("Land")
+        zeilenAusblenden("Land")
         break;
 
     case 2:
-        ZeilenAusblenden("Unternehmen");
+        zeilenAusblenden("Unternehmen");
         break;
     }
 }
@@ -198,7 +198,8 @@ function updateTabelle(){
     suchen();
 }
 
-function isrtl(){
+
+function isRtl(){
     let tags = ["ar", "he", "fa", "ur", "ks", "ps", "ug", "ku", "pa", "sd"];
     let language = navigator.language;
     let rtl = false;
@@ -214,7 +215,7 @@ function changeToRtl(){
     let nav = document.getElementById("navspalte");
     let inhalt = document.getElementById("inhaltsspalte");
     
-    if (isrtl()){
+    if (isRtl()){
         nav.classList.add("order-md-2", "order-lg-2" ,"order-xl-2");
         inhalt.classList.add("order-md-1", "order-lg-1" ,"order-xl-1");
     } else {
