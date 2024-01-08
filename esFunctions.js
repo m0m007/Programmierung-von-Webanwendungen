@@ -136,7 +136,7 @@ function selectedRadio(){
 }
 
 
-function ZeilenAusblenden(modus){
+function zeilenAusblenden(modus){
     let tabelle = document.getElementById("tabelle");
      let zeilen = tabelle.getElementsByTagName("tr");
      for (let i = 0; i < zeilen.length; i++) {
@@ -164,11 +164,11 @@ function filtern(){
         break;
 
     case 1:
-        ZeilenAusblenden("Land")
+        zeilenAusblenden("Land")
         break;
 
     case 2:
-        ZeilenAusblenden("Unternehmen");
+        zeilenAusblenden("Unternehmen");
         break;
     }
 }
@@ -198,7 +198,7 @@ function updateTabelle(){
     suchen();
 }
 
-function isrtl(){
+function isRtl(){
     let tags = ["ar", "he", "fa", "ur", "ks", "ps", "ug", "ku", "pa", "sd"];
     let language = navigator.language;
     let rtl = false;
@@ -210,11 +210,11 @@ function isrtl(){
     return rtl;
 }
 
-function changetortl(){
+function changeToRtl(){
     let nav = document.getElementById("navspalte");
     let inhalt = document.getElementById("inhaltsspalte");
     
-    if (isrtl()){
+    if (isRtl()){
         nav.classList.add("order-md-2", "order-lg-2" ,"order-xl-2");
         inhalt.classList.add("order-md-1", "order-lg-1" ,"order-xl-1");
     } else {
